@@ -1,6 +1,8 @@
+export const whatsappLink = 'https://wa.me/5512992187020'
+
 export const contactLinks = [
   { label: 'Instagram', href: 'https://www.instagram.com/eoaurelio' },
-  { label: 'WhatsApp', href: 'https://wa.me/5512992187020' },
+  { label: 'WhatsApp', href: whatsappLink },
   { label: 'LinkedIn', href: 'https://www.linkedin.com/in/pedro-aurelio/' },
 ]
 
@@ -19,8 +21,26 @@ export const services = [
   },
 ]
 
+// cover = imagem em public/imgs/ (16:9, ex: 1280x720)
 export const projects = [
-  { id: '01', href: 'https://www.instagram.com/p/DX0Pq0VM9ZP/' },
-  { id: '02', href: 'https://www.instagram.com/p/DZI2a7Spwtr/' },
-  { id: '03', href: 'https://www.instagram.com/p/DR3JI8ojStb/' },
+  { id: '01', title: 'Projeto Pessoal', href: 'https://www.instagram.com/p/DX0Pq0VM9ZP/', cover: '/imgs/projeto-01.jpg' },
+  { id: '02', title: 'Projeto Doceria', href: 'https://www.instagram.com/p/DZI2a7Spwtr/', cover: '/imgs/projeto-02.jpg' },
+  { id: '03', title: 'Projeto Recap Evento', href: 'https://www.instagram.com/p/DR3JI8ojStb/', cover: '/imgs/projeto-03.jpg' },
+  { id: '04', title: 'Projeto Perfumaria', href: 'https://www.instagram.com/p/DdKU7bEpztU/', cover: '/imgs/projeto-04.jpg' },
+]
+
+// A seção de depoimentos só aparece quando houver itens aqui.
+// Use somente depoimentos reais. Exemplo:
+// { name: 'Nome do cliente', role: 'Empresa ou cargo', text: 'O que o cliente disse sobre o seu trabalho.' },
+export const testimonials = []
+
+// Lojas parceiras. A seção só aparece quando houver itens aqui.
+// logo é opcional (imagem em public/imgs/parceiros/). Sem logo, mostra o nome.
+// Exemplo: { name: 'Nome da loja', logo: '/imgs/parceiros/loja.png', href: 'https://www.instagram.com/loja' },
+export const partners = [
+  { name: 'Gregates Doceria', logo: '/imgs/parceiros/gregates.png', href: 'https://www.instagram.com/gregatesdoceria/' },
+  { name: 'Master Tec', logo: '/imgs/parceiros/mastertec.png', href: 'https://www.instagram.com/mastertec_sjc/' },
+  { name: 'MS Perfumaria', logo: '/imgs/parceiros/marislazykperfumaria.png', href: 'https://www.instagram.com/marislazyk.perfumaria/' },
+  { name: 'DLSMobile', logo: '/imgs/parceiros/dlsmobile.png', href: 'https://www.instagram.com/dlsmobile_/' }
+
 ]

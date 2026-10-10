@@ -1,7 +1,10 @@
 import { useState } from 'react'
 import { Button, Card } from 'react-bootstrap'
 import ContactModal from '../components/ContactModal'
+import Showreel from '../components/Showreel'
+import Testimonials from '../components/Testimonials'
 import { services } from '../data'
+import Partners from '../components/Partners'
 
 export default function Home() {
   const [showModal, setShowModal] = useState(false)
@@ -9,7 +12,7 @@ export default function Home() {
   return (
     <>
       <section className="hero">
-        <div className="hero-content">
+        <div className="hero-content fade-in">
           <p className="hero-label">AUDIOVISUAL • CRIAÇÃO • EDIÇÃO</p>
 
           <h1>
@@ -24,7 +27,7 @@ export default function Home() {
           </p>
 
           <div className="hero-buttons">
-            <Button as="a" href="#sobre" variant="outline-light" className="button">
+            <Button as="a" href="#showreel" variant="outline-light" className="button">
               Conheça meu trabalho
               <span>↓</span>
             </Button>
@@ -36,12 +39,14 @@ export default function Home() {
         </div>
       </section>
 
+      <Showreel />
+
       <section id="sobre" className="about section">
-        <div className="about-image">
+        <div className="about-image fade-in">
           <img src="/imgs/eu.jpeg" alt="Foto de Pedro Aurélio" />
         </div>
 
-        <div className="about-content">
+        <div className="about-content fade-in">
           <p className="section-label">SOBRE MIM</p>
 
           <h2>
@@ -64,7 +69,7 @@ export default function Home() {
       </section>
 
       <section className="services section">
-        <div className="section-header">
+        <div className="section-header fade-in">
           <p className="section-label">O QUE EU FAÇO</p>
 
           <h2>
@@ -76,7 +81,7 @@ export default function Home() {
 
         <div className="services-container">
           {services.map(({ title, text }) => (
-            <Card as="article" className="service-card" key={title}>
+            <Card as="article" className="service-card fade-in" key={title}>
               <Card.Body>
                 <Card.Title as="h3">{title}</Card.Title>
                 <Card.Text>{text}</Card.Text>
@@ -85,6 +90,9 @@ export default function Home() {
           ))}
         </div>
       </section>
+
+      <Partners />
+      <Testimonials />
 
       <ContactModal show={showModal} onHide={() => setShowModal(false)} />
     </>

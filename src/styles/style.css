@@ -429,9 +429,9 @@ footer {
 }
 
 .service-card .card-title {
-    font-size: 24px;
-    line-height: 1.1;
-    margin-bottom: 20px;
+    color: #e8e4dc;
+    font-weight: 600;
+    letter-spacing: -0.5px;
 }
 
 .service-card .card-text {
@@ -605,5 +605,160 @@ footer {
     .button {
         width: 100%;
         justify-content: center;
+    }
+}
+
+/* Fade-in ao rolar */
+
+.fade-in {
+    opacity: 0;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    animation: fadeInUp 0.8s ease backwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+}
+
+.services-container .fade-in:nth-child(2) {
+    animation-delay: 0.15s;
+}
+
+.services-container .fade-in:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .fade-in {
+        opacity: 1;
+    }
+
+    .fade-in.visible {
+        animation: none;
+    }
+}
+
+/* Showreel */
+.showreel-video video {
+    width: 100%;
+    display: block;
+    aspect-ratio: 16 / 9;
+    border-radius: 28px;
+    border: 1px solid #222222;
+    background: #111111;
+}
+
+/* Capas dos projetos */
+.carousel-slide-content {
+    min-height: 420px;
+    background-color: #111111;
+    background-size: cover;
+    background-position: center;
+}
+
+.carousel-slide-content .section-label {
+    color: #cccccc;
+}
+
+/* Depoimentos */
+.testimonial-author {
+    margin-top: 20px;
+    font-weight: 600;
+    color: #e8e4dc;
+}
+
+.testimonial-author span {
+    display: block;
+    margin-top: 4px;
+    font-size: 13px;
+    font-weight: 400;
+    color: #777777;
+}
+
+/* Botão do WhatsApp */
+.whatsapp-float {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    width: 58px;
+    height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #25d366;
+    color: #ffffff;
+    font-size: 30px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    z-index: 90;
+    transition: transform 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    color: #ffffff;
+}
+
+@media (max-width: 640px) {
+    .carousel-slide-content {
+        min-height: 320px;
+    }
+
+    .whatsapp-float {
+        right: 16px;
+        bottom: 16px;
+    }
+}
+
+/* Parceiros */
+.partners-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.partner {
+    height: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 20px;
+    background: #111111;
+    border: 1px solid #222222;
+    color: #888888;
+    font-weight: 600;
+    text-align: center;
+    transition: border-color 0.3s ease, color 0.3s ease;
+}
+
+a.partner:hover {
+    border-color: #444444;
+    color: #ffffff;
+}
+
+.partner img {
+    max-width: 100%;
+    max-height: 56px;
+    object-fit: contain;
+    filter: grayscale(1);
+    opacity: 0.7;
+    transition: opacity 0.3s ease, filter 0.3s ease;
+}
+
+a.partner:hover img {
+    filter: none;
+    opacity: 1;
+}
+
+@media (max-width: 900px) {
+    .partners-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
